@@ -1,3 +1,8 @@
+.vscode
+runcontainer.sh
+buildimage.sh
+testrun.sh
+
 # Logs
 logs
 *.log
@@ -56,4 +61,3 @@ typings/
 
 # dotenv environment variables file
 .env
-

@@ -1,0 +1,6 @@
+.gitignore
+LICENSE
+.vscode
+runcontainer.sh
+buildimage.sh
+testrun.sh
