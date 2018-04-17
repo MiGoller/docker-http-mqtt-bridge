@@ -28,7 +28,7 @@ FROM node:8-alpine AS runtime
 LABEL Author="MiGoller"
 
 # Set environment variables to default values
-ENV "AUTH_KEY=SetToSomethingVerySpecial"
+ENV AUTH_KEY=SetToSomethingVerySpecial
 
 COPY --from=build /build /app
 
