@@ -1,0 +1,8 @@
+version: '2'
+services:
+  app:
+    image: migoller/http-mqtt-bridge
+    env_file:
+      - http-mqtt-bridge.env
+    ports:
+      - "5000:5000"

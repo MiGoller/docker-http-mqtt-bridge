@@ -1,3 +1,6 @@
+#
+#   BUILD image
+#
 FROM node:8-alpine AS build
 
 # Create the working dir
@@ -17,15 +20,15 @@ RUN rm -rf master_temp
 # Install app
 RUN npm install
 
+#
+#   RUNTIME image
+#
 FROM node:8-alpine AS runtime
 
 LABEL Author="MiGoller"
 
 # Set environment variables to default values
-ENV "AUTH_KEY=SetToSomethingVerySpecial" \
-    "MQTT_HOST=e.g. mqtts://k99.cloudmqtt.com:21234" \
-    "MQTT_USER=BrokerUsername" \
-    "MQTT_PASS=BrokerPassword" 
+ENV "AUTH_KEY=SetToSomethingVerySpecial"
 
 COPY --from=build /build /app
 
@@ -40,4 +43,3 @@ COPY pm2app.yml .
 EXPOSE 5000
 
 CMD ["pm2-docker", "pm2app.yml"]
-# CMD ["node", "index.js"]

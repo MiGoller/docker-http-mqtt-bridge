@@ -4,3 +4,5 @@ LICENSE
 runcontainer.sh
 buildimage.sh
 testrun.sh
+docker-compose.yml
+*.env
