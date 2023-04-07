@@ -35,7 +35,7 @@ COPY --from=build /build /app
 WORKDIR /app
 
 # Install NodeJS dependencies
-RUN npm install pm2 -g
+RUN npm install pm2@3.5.2 -g
 
 # Copy PM2 config
 COPY pm2app.yml .
